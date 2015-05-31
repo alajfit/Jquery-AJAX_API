@@ -1,0 +1,21 @@
+<!DOCTYPE html> <html class=no-js> <head> <meta charset=utf-8> <title>Jquery AJAX_API</title> <meta name=description content=""> <meta name=viewport content="width=device-width"> <link rel="shortcut icon" href=/6df2b309.favicon.ico> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel=stylesheet href=styles/e0def033.main.css> <script src=scripts/vendor/d4d78a91.modernizr.js></script> <script src=bower_components/mustache/mustache.js></script>  <body> <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <div class=container> <div class=header> <ul class="nav nav-pills pull-right"> <li class=active><a href=#>Home</a></li> <li><a href=#>About</a></li> <li><a href=#>Contact</a></li> </ul> <h3 class=text-muted>Jquery AJAX_API</h3> </div> <div> <h3>Coffee Orders</h3> <ul id=orders> </ul> <!-- with newer browsers you can just use the template tag instead of script but its not as backwards compatible --> <script type=text/template id=order-template><li>
+            <strong>Name:</strong> 
+            <span class="noedit name">{{name}}</span>
+            <input class="edit name input_in" value="?" />
+             /  
+            <strong>Drink:</strong> 
+            <span class="noedit drink">{{drink}}</span>
+            <input class="edit drink input_in" value="?" />
+
+            <button data-id='1' class='btn remove btn-danger pull-right'>x</button>
+            <button data-id='1' class='btn editOrder noedit btn-primary pull-right'>Edit</button>
+            <button data-id='1' class='btn saveEdit edit btn-primary pull-right'>Save</button>
+            <button data-id='1' class='btn cancelEdit edit btn-primary pull-right'>Cancel</button>
+          </li></script> <br> <h4>Add a Coffee Order</h4> <p>name: <input id=name></p> <p>drink: <input id=drink></p> <button id=add-order class="btn btn-primary">Add!</button> <br> </div> <div class=footer> <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p> </div> </div> <script src=scripts/b9d3f46e.vendor.js></script> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --> <script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');</script> <script src=scripts/764433e9.main.js></script>  

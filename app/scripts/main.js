@@ -7,12 +7,7 @@ $(document).ready(function(){
 	var $newName = $('#name');
 	var $newDrink = $('#drink');
 
-	var orderTemplate = ""+
-	"<li>"+
-	"<strong>Name:</strong> {{name}} | "+
-	"<strong>Drink:</strong> {{drink}}"+
-	"<button data-id='1' class='btn remove btn-danger pull-right'>x</button>"
-	"</li>";
+	var orderTemplate = $('#order-template').html();
 
 	function addOrder(order) {
 		// Pass Mustache a Template and an Object
@@ -70,5 +65,42 @@ $(document).ready(function(){
 				alert("Didnt Work");
 			}
 		});
+	});
+
+	$orders.delegate('.editOrder', 'click', function() {
+		var $li = $(this).closest('li');
+		$li.find('input.name').val( $li.find('span.name').html() );
+		$li.find('input.drink').val( $li.find('span.drink').html() );
+		$li.addClass('edit');
+	});
+
+	$orders.delegate('.cancelEdit', 'click', function() {
+		$(this).closest('li').removeClass('edit');
+	});
+
+	$orders.delegate('.saveEdit', 'click', function() {
+		var $li = $(this).closest('li');
+		var order = {
+			name: $li.find('input.name').val(),
+			drink: $li.find('input.drink').val()
+		};
+
+		// this should be got from actual requests
+		var $num = 1;
+		$.ajax({
+			type: 'PUT',
+			url: '/api/orders/' + $num,
+			data: order,
+			success: function() {
+				$li.find('span.name').html(order.name);
+				$li.find('span.drink').html(order.drink);
+				$li.removeClass('edit');
+			},
+			error: function() {
+				alert('Error updating order');
+			}
+		})
+
+
 	});
 });

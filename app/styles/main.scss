@@ -98,4 +98,24 @@ body {
   color: white;
   padding: 10px;
   margin-bottom: 10px;
+  padding-bottom: 22px;
+}
+
+ul li .edit {
+  display: none;
+  margin-right: 10px;
+}
+
+ul li.edit .edit {
+  display: initial;
+  margin-right: 10px;
+}
+
+ul li.edit .noedit {
+  display: none;
+  margin-right: 10px;
+}
+
+.input_in {
+  color: black;
 }

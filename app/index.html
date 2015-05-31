@@ -40,6 +40,25 @@
         <h3>Coffee Orders</h3>
         <ul id="orders">
         </ul>
+
+        <!-- with newer browsers you can just use the template tag instead of script but its not as backwards compatible -->
+        <script type="text/template" id="order-template">
+          <li>
+            <strong>Name:</strong> 
+            <span class="noedit name">{{name}}</span>
+            <input class="edit name input_in" value="?" />
+             /  
+            <strong>Drink:</strong> 
+            <span class="noedit drink">{{drink}}</span>
+            <input class="edit drink input_in" value="?" />
+
+            <button data-id='1' class='btn remove btn-danger pull-right'>x</button>
+            <button data-id='1' class='btn editOrder noedit btn-primary pull-right'>Edit</button>
+            <button data-id='1' class='btn saveEdit edit btn-primary pull-right'>Save</button>
+            <button data-id='1' class='btn cancelEdit edit btn-primary pull-right'>Cancel</button>
+          </li>
+        </script>
+
         <br />
 
         <h4>Add a Coffee Order</h4>
@@ -71,7 +90,6 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="bower_components/mustache/mustache.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
